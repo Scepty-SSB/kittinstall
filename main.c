@@ -11,10 +11,14 @@ int main(int argc, char *argv[]) {
      char * config = "/.config/justinstall/mgrs.conf";
      char * mgrsconfig = strcat(home, config);
     if ((argv[1] = "--add") || (argv[1] = "-a")) {
-           //Open a file in append mode
+
+        //Opens in append mode if mgrs.conf exists, creates mrgs.conf and opens in
+        //write mode if not. Fixes blank lines at the beginning of the file.
+        if (access(fname, F_OK) == 0) {
        fptr = fopen(mgrsconfig, "a");
-     
-       // Write some text to the file
+} else {
+    fptr = fopen(mgrsconfig, "w")
+}
        for (int i = 2; i<=argc; i++) {
        fprintf(fptr, argv[i]);
        if (i != argc){
