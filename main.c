@@ -13,7 +13,7 @@ int main(int argc, char *argv[]) {
     if ((argv[1] = "--add") || (argv[1] = "-a")) {
 
         //Opens in append mode if mgrs.conf exists, creates mrgs.conf and opens in
-        //write mode if not. Fixes blank lines at the beginning of the file.
+        //write mode if not. Fixes blank lines at the beginning of the mgrs.conf
         if (access(fname, F_OK) == 0) {
        fptr = fopen(mgrsconfig, "a");
 } else {
