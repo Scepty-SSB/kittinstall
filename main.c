@@ -4,7 +4,7 @@
 #include <string.h>
 int main(int argc, char *argv[]) {
     FILE *fptr;
-    //creating the variable that poiints to the config file. Done this way because 
+    //creating the variable that points to the config file. Done this way because 
     //every other methood I tried didn't work. I know it's probably bad, but I spent
     //way too long figuring this out to care. If it ain't broke...
      char * home = getenv("HOME");
