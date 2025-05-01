@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
+
 int main(int argc, char *argv[]) {
     FILE *fptr;
     //creating the variable that points to the config file. Done this way because 
@@ -10,14 +11,20 @@ int main(int argc, char *argv[]) {
      char * home = getenv("HOME");
      char * config = "/.config/justinstall/mgrs.conf";
      char * mgrsconfig = strcat(home, config);
+     char * ls = "/.config/justinstall/mgrls.conf";
+     char * mgrls = strcat(home, ls);
+     char * contents = "testing";
+     if (access(mgrls, F_OK) != 0) {
+         fptr = fopen(mgrls, "w");
+         fprintf(fptr, contents);
+     }
     if ((argv[1] = "--add") || (argv[1] = "-a")) {
-
         //Opens in append mode if mgrs.conf exists, creates mrgs.conf and opens in
         //write mode if not. Fixes blank lines at the beginning of the mgrs.conf
-        if (access(fname, F_OK) == 0) {
+        if (access(mgrsconfig, F_OK) == 0) {
        fptr = fopen(mgrsconfig, "a");
 } else {
-    fptr = fopen(mgrsconfig, "w")
+    fptr = fopen(mgrsconfig, "w");
 }
        for (int i = 2; i<=argc; i++) {
        fprintf(fptr, argv[i]);
@@ -28,10 +35,14 @@ int main(int argc, char *argv[]) {
        // Close the file
        fclose(fptr);
     } 
-    else {
-        //read each line of mgrsconfig, lookup the relevant search command, and run it
-        //with system()
-    }
+    //else {
+        //Get managers from mgrs.conf
+        //Find search command in mgrls.conf
+        //run search command with system()
+        //repeat for each manager
+        //let user select numerical option
+        //run install command
+    //}
     return 0;
   }
   
