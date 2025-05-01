@@ -17,6 +17,7 @@ int main(int argc, char *argv[]) {
      if (access(mgrls, F_OK) != 0) {
          fptr = fopen(mgrls, "w");
          fprintf(fptr, contents);
+         fclose(fptr);
      }
     if ((argv[1] = "--add") || (argv[1] = "-a")) {
         //Opens in append mode if mgrs.conf exists, creates mrgs.conf and opens in
