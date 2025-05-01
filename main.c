@@ -9,9 +9,9 @@ int main(int argc, char *argv[]) {
     //every other methood I tried didn't work. I know it's probably bad, but I spent
     //way too long figuring this out to care. If it ain't broke...
      char * home = getenv("HOME");
-     char * config = "/.config/justinstall/mgrs.conf";
+     char * config = "/.config/kittenstall/mgrs.conf";
      char * mgrsconfig = strcat(home, config);
-     char * ls = "/.config/justinstall/mgrls.conf";
+     char * ls = "/.config/kittenstall/mgrls.conf";
      char * mgrls = strcat(home, ls);
      char * contents = "testing";
      if (access(mgrls, F_OK) != 0) {
