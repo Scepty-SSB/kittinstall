@@ -11,14 +11,14 @@ int main(int argc, char *argv[]) {
      char * home = getenv("HOME");
      char * config = "/.config/kittenstall/mgrs.conf";
      char * mgrsconfig = strcat(home, config);
-     char * ls = "/.config/kittenstall/mgrls.conf";
+    /* char * ls = "/.config/kittenstall/mgrls.conf";
      char * mgrls = strcat(home, ls);
      char * contents = "testing";
      if (access(mgrls, F_OK) != 0) {
          fptr = fopen(mgrls, "w");
-         fprintf(fptr, contents);
+         SEGFAULT HERE fprintf(fptr, contents);
          fclose(fptr);
-     }
+     }*/
     if ((argv[1] = "--add") || (argv[1] = "-a")) {
         //Opens in append mode if mgrs.conf exists, creates mrgs.conf and opens in
         //write mode if not. Fixes blank lines at the beginning of the mgrs.conf
@@ -33,7 +33,7 @@ int main(int argc, char *argv[]) {
         fprintf(fptr, "\n");
        }
        }
-       // Close the file
+       // Close the file. SEGFAULT HERE for some reason...
        fclose(fptr);
     } 
     //else {
