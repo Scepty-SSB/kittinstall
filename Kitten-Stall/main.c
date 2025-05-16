@@ -44,14 +44,18 @@ int main(int argc, char *argv[]) {
     }
     fclose(fptr);
   } 
-  //else {
-  //Get managers from mgrs.conf
-  //Find search command in mgrls.conf
-  //run search command with system()
-  //repeat for each manager
-  //let user select numerical option
-  //run install command
-  //}
+  else {
+      printf("Enter the number of matches from each repository to list (0 to cancel)\n");
+      int matches;
+      scanf("%d", &matches);
+      if (matches == 0) {
+          printf("Program terminated by user");
+          return 0;
+      }
+      else{
+         printf("%d", matches); 
+      }  
+  }
   return 0;
   }
   
