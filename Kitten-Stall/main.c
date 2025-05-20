@@ -11,11 +11,20 @@ struct manager {
 	_Bool enabled;
 };
 
+struct pkg {
+	char* name;
+	char* hostManager;
+};
+
 struct manager managerList[3] = {
 	{"apt", "apt-cache search", "apt install", true},
 	{"yay", "yay -s", "yay -S", false},
 	{"flatpak", "flatpak search", "flatpak install", true},
 };
+
+//4 is a place holder. It will eventually be replaced by the number of matches to list
+//(defined in .config) times the number of enabled package managers
+struct pkg packageList[4];
 
 void print_usage(void) {
 	fprintf(stderr, "Pass -a to add.\n");
@@ -72,9 +81,23 @@ int main(int argc, char *argv[]) {
     //varies depending on the manager's name and specific commands
     //I'll improve this at some point
 		for (int i = 0; i < *(&managerList + 1) - managerList; i++) {
+			//this is a placeholder
 			printf ("%s, %s, %s, %b\n", managerList[i].name, managerList[i].search,
 			        managerList[i].install, managerList[i].enabled);
     }
+
+
+	// using scanf() to select a package number
+	int pkgID;
+      scanf("%d", &pkgID);
+      if (pkgID == 0) {
+          printf("Program terminated by user");
+          return 0;
+		else {
+			//Placeholder, will fix
+		char* installCommand = malloc(strlen());
+		strcpy()
+		}
     //wasn't sure this would work tbh
     //I plan to check for if the package manager exists in $PATH rather than
     //needing mgrs.conf at all
