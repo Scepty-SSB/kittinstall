@@ -22,10 +22,6 @@ struct manager managerList[3] = {
 	{"flatpak", "flatpak search", "flatpak install", true},
 };
 
-//4 is a place holder. It will eventually be replaced by the number of matches to list
-//(defined in .config) times the number of enabled package managers
-struct pkg packageList[4];
-
 void print_usage(void) {
 	fprintf(stderr, "Pass -a to add.\n");
 }
@@ -94,9 +90,12 @@ int main(int argc, char *argv[]) {
           printf("Program terminated by user");
           return 0;
 		else {
-			//Placeholder, will fix
+		//4 is a place holder. It will eventually be replaced by the number of matches to list
+		//(defined in .config) times the number of enabled package managers
+		struct pkg packageList[4];
+
+		//Placeholder, will fix
 		char* installCommand = malloc(strlen());
-		strcpy()
 		}
     //wasn't sure this would work tbh
     //I plan to check for if the package manager exists in $PATH rather than
