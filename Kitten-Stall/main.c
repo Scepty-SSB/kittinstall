@@ -26,6 +26,9 @@ void print_usage(void) {
 	fprintf(stderr, "Pass -a to add.\n");
 }
 
+/// Given an array of statically-known size N, expands to a constant N.
+#define ARRAY_SIZE(x) (sizeof(x) / sizeof(x[0]))
+
 int main(int argc, char *argv[]) {
 	if (argc < 2) {
 		print_usage();
@@ -76,7 +79,7 @@ int main(int argc, char *argv[]) {
     //pointer arithmetic to get size of managerList[] because the size of elements 
     //varies depending on the manager's name and specific commands
     //I'll improve this at some point
-		for (int i = 0; i < *(&managerList + 1) - managerList; i++) {
+		for (int i = 0; i < ARRAY_SIZE(managerList); i++) {
 			//this is a placeholder
 			printf ("%s, %s, %s, %b\n", managerList[i].name, managerList[i].search,
 			        managerList[i].install, managerList[i].enabled);
