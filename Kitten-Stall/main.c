@@ -17,7 +17,7 @@ struct pkg {
 };
 
 struct manager managerList[3] = {
-	{"apt", "apt-cache search", "apt install", true},
+	{"apt", "apt search", "apt install", true},
 	{"yay", "yay -s", "yay -S", false},
 	{"flatpak", "flatpak search", "flatpak install", true},
 };
