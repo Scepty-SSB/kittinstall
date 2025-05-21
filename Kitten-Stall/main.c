@@ -11,7 +11,7 @@ struct manager {
 	_Bool enabled;
 };
 
-struct pkg {
+struct package {
 	char* name;
 	char* hostManager;
 };
