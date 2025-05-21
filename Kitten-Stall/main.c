@@ -74,7 +74,7 @@ int main(int argc, char *argv[]) {
 			return 0;
 		}
 		else {
-			printf("%d", matches);
+			printf("%d\n", matches);
 		}
     //pointer arithmetic to get size of managerList[] because the size of elements 
     //varies depending on the manager's name and specific commands
