@@ -84,16 +84,16 @@ int main(int argc, char *argv[]) {
 
 	// using scanf() to select a package number
 	printf("Enter the number of the desired package (0 to cancel)\n");
-	int pkgID;
-      scanf("%d", &pkgID);
-      if (pkgID == 0) {
+	int packageID;
+      scanf("%d", packageID);
+      if packageID == 0) {
           printf("Program terminated by user");
           return 0;
       }
 		else {
 		//4 is a place holder. It will eventually be replaced by the number of matches to list
 		//(defined in .config) times the number of enabled package managers
-		//struct pkg packageList[4];
+		//struct package packageList[4];
 
 		//Placeholder, will fix
 		// char* installCommand = malloc(strlen());
