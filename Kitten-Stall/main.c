@@ -81,8 +81,8 @@ int main(int argc, char *argv[]) {
     //I'll improve this at some point
 		for (int i = 0; i < ARRAY_SIZE(managerList); i++) {
 			//this is a placeholder
-			printf ("%s, %s, %s, %b\n", managerList[i].name, managerList[i].search,
-			        managerList[i].install, managerList[i].enabled);
+			printf ("%s, %s, %s, %s\n", managerList[i].name, managerList[i].search,
+			        managerList[i].install, managerList[i].enabled?"true":"false");
     }
 
 
