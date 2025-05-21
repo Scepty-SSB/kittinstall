@@ -76,17 +76,14 @@ int main(int argc, char *argv[]) {
 		else {
 			printf("%d\n", matches);
 		}
-    //pointer arithmetic to get size of managerList[] because the size of elements 
-    //varies depending on the manager's name and specific commands
-    //I'll improve this at some point
 		for (int i = 0; i < ARRAY_SIZE(managerList); i++) {
 			//this is a placeholder
 			printf ("%s, %s, %s, %s\n", managerList[i].name, managerList[i].search,
 			        managerList[i].install, managerList[i].enabled?"true":"false");
     }
 
-
 	// using scanf() to select a package number
+	printf("Enter the number of the desired package (0 to cancel)\n");
 	int pkgID;
       scanf("%d", &pkgID);
       if (pkgID == 0) {
@@ -97,14 +94,15 @@ int main(int argc, char *argv[]) {
 		//4 is a place holder. It will eventually be replaced by the number of matches to list
 		//(defined in .config) times the number of enabled package managers
 		//struct pkg packageList[4];
+
 		//Placeholder, will fix
 		// char* installCommand = malloc(strlen());
+		}
     //wasn't sure this would work tbh
     //I plan to check for if the package manager exists in $PATH rather than
     //needing mgrs.conf at all
 		char * path = getenv("PATH");
 		printf("%s\n", path);
-		}
 	}
 	return 0;
 }
