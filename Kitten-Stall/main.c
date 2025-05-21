@@ -96,16 +96,15 @@ int main(int argc, char *argv[]) {
 		else {
 		//4 is a place holder. It will eventually be replaced by the number of matches to list
 		//(defined in .config) times the number of enabled package managers
-		struct pkg packageList[4];
-
+		//struct pkg packageList[4];
 		//Placeholder, will fix
 		// char* installCommand = malloc(strlen());
-		}
     //wasn't sure this would work tbh
     //I plan to check for if the package manager exists in $PATH rather than
     //needing mgrs.conf at all
 		char * path = getenv("PATH");
 		printf("%s\n", path);
+		}
 	}
 	return 0;
 }
