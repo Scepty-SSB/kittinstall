@@ -9,6 +9,7 @@ struct manager {
 	const char* search;
 	const char* install;
 	_Bool enabled;
+	_Bool sudoRequired;
 };
 
 struct package {
@@ -17,9 +18,9 @@ struct package {
 };
 
 struct manager managerList[3] = {
-	{"apt", "apt search", "apt install", true},
-	{"yay", "yay -s", "yay -S", false},
-	{"flatpak", "flatpak search", "flatpak install", true},
+	{"apt", "apt search", "apt install", true, true},
+	{"yay", "yay -s", "yay -S", false, false},
+	{"flatpak", "flatpak search", "flatpak install", true, false},
 };
 
 void print_usage(void) {
@@ -78,8 +79,8 @@ int main(int argc, char *argv[]) {
 		}
 		for (int i = 0; i < ARRAY_SIZE(managerList); i++) {
 			//this is a placeholder
-			printf ("%s, %s, %s, %s\n", managerList[i].name, managerList[i].search,
-			        managerList[i].install, managerList[i].enabled?"true":"false");
+			printf ("%s, %s, %s, %s, %s\n", managerList[i].name, managerList[i].search,
+			        managerList[i].install, managerList[i].enabled?"true":"false", managerList[i].sudoRequired?"true":"false");
     }
 
 	// using scanf() to select a package number
