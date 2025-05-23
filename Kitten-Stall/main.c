@@ -87,7 +87,7 @@ int main(int argc, char *argv[]) {
 	printf("Enter the number of the desired package (0 to cancel)\n");
 	int packageID;
       scanf("%d", packageID);
-      if packageID == 0) {
+      if (packageID == 0) {
           printf("Program terminated by user");
           return 0;
       }
